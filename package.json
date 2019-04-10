@@ -44,12 +44,14 @@
   ],
   "scripts": {
     "test": "./node_modules/lab/bin/lab -cv -m 5000 ./test/**/*.spec.js",
-    "test-all": "./node_modules/lab/bin/lab -cv -m 5000 ./test/**/*.spec.js"
+    "test-all": "./node_modules/lab/bin/lab -cv -m 5000 ./test/**/*.spec.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "bluebird": "^2.9.2",
     "commander": "^2.2.0",
-    "gulp": "^3.8.10",
+    "gulp": "^4.0.0",
     "gulp-rename": "^1.2.0",
     "gulp-replace": "^0.5.2",
     "gulp-util": "^3.0.2",
@@ -58,7 +60,8 @@
     "resolve": "^1.0.0",
     "rimraf": "^2.2.8",
     "semver": "^4.2.0",
-    "tildify": "^1.0.0"
+    "tildify": "^1.0.0",
+    "snyk": "^1.149.0"
   },
   "devDependencies": {
     "gulp-jshint": "^1.9.0",
@@ -66,5 +69,6 @@
     "code": "^1.2.1",
     "lab": "^5.2.0",
     "mkdirp": "*"
-  }
+  },
+  "snyk": true
 }
